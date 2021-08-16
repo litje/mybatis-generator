@@ -12,9 +12,14 @@
 
         <commentGenerator type="com.li.MybatisCommentGenerator">
             <property name="suppressDate" value="true"/>
+            <!-- 可以使用''包含字段名，避免字段名与sql保留字冲突报错-->
+            <property name="autoDelimitKeywords" value="true" />
+            <property name="beginningDelimiter" value="`" />
+            <property name="endingDelimiter" value="`" />
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <!-- 不要开启，否则将不会使用自定义注释 -->
             <property name="suppressAllComments" value="false"/>
+            <property name="addRemarkComments" value="true"/>
         </commentGenerator>
         <!-- 数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
